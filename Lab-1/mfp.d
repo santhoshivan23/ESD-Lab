@@ -1,0 +1,1 @@
+mfp.o: mfp.s
