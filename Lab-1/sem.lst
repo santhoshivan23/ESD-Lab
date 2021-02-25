@@ -1,0 +1,159 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0x10001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    5 00000004 00000000        DCD              Reset_Handler ; reset vector
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4815            LDR              R0, =SRC
+   12 00000002 4916            LDR              R1, =DST
+   13 00000004 6803            LDR              R3, [R0]
+   14 00000006 600B            STR              R3, [R1]
+   15 00000008 6843            LDR              R3, [R0, #4]
+   16 0000000A 6043            STR              R3, [R0, #4]
+   17 0000000C 6883            LDR              R3, [R0, #8]
+   18 0000000E 6083            STR              R3, [R0, #8]
+   19 00000010 68C3            LDR              R3, [R0, #12]
+   20 00000012 60C3            STR              R3, [R0, #12]
+   21 00000014 6903            LDR              R3, [R0, #16]
+   22 00000016 6103            STR              R3, [R0, #16]
+   23 00000018 6943            LDR              R3, [R0, #20]
+   24 0000001A 6143            STR              R3, [R0, #20]
+   25 0000001C 6983            LDR              R3, [R0, #24]
+   26 0000001E 6183            STR              R3, [R0, #24]
+   27 00000020 69C3            LDR              R3, [R0, #28]
+   28 00000022 61C3            STR              R3, [R0, #28]
+   29 00000024 6A03            LDR              R3, [R0, #32]
+   30 00000026 6203            STR              R3, [R0, #32]
+   31 00000028 6A43            LDR              R3, [R0, #36]
+   32 0000002A 6243            STR              R3, [R0, #36]
+   33 0000002C         
+   34 0000002C         STOP
+   35 0000002C E7FE            B                STOP
+   36 0000002E 00 00 12345678 
+              22345678 
+              32345678 
+              42345678 
+              52345678 
+              62345678 
+              72345678 
+              82345678 
+              92345678 
+              A2345678 SRC     DCD              0x12345678, 0x22345678, 0x32345
+678, 0x42345678, 0x52345678, 0x62345678, 0x72345678, 0x82345678, 0x92345678, 0x
+A2345678 
+                                                            ;SRC  location in c
+                                                            ode segment
+   37 00000058 00000000 
+              00000000         AREA             DATASEG, DATA, READWRITE
+   38 00000000 00000000 
+                       DST     DCD              0           ;DST location in Da
+                                                            ta segment
+   39 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=sem.d -o
+sem.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+LPC17xx --predefine="__EVAL SETA 1" --list=sem.lst sem.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file sem.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file sem.s
+   Uses
+      At line 2 in file sem.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file sem.s
+   Uses
+      At line 5 in file sem.s
+      At line 9 in file sem.s
+
+SRC 00000030
+
+Symbol: SRC
+   Definitions
+      At line 36 in file sem.s
+   Uses
+      At line 11 in file sem.s
+Comment: SRC used once
+STOP 0000002C
+
+Symbol: STOP
+   Definitions
+      At line 34 in file sem.s
+   Uses
+      At line 35 in file sem.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file sem.s
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATASEG 00000000
+
+Symbol: DATASEG
+   Definitions
+      At line 37 in file sem.s
+   Uses
+      None
+Comment: DATASEG unused
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 38 in file sem.s
+   Uses
+      At line 12 in file sem.s
+Comment: DST used once
+2 symbols
+341 symbols in table

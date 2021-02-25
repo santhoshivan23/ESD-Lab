@@ -1,0 +1,1 @@
+sem.o: sem.s
