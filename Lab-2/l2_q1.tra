@@ -1,18 +1,18 @@
-*** Creating Trace Output File 'sample-project.tra' Ok.
+*** Creating Trace Output File 'l2_q1.tra' Ok.
 ### Preparing for ADS-LD.
 ### Creating ADS-LD Command Line
-### List of Objects: adding '"sem.o"'
+### List of Objects: adding '"l2_q1.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "sem.o" 
+--cpu Cortex-M3 "l2_q1.o" 
 --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
- --list ".\sample-project.map" -o sample-project.axf### Preparing Environment (PrepEnvAds)
-### ADS-LD Output File: 'sample-project.axf'
-### ADS-LD Command File: 'sample-project.lnp'
+ --list ".\l2_q1.map" -o l2_q1.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'l2_q1.axf'
+### ADS-LD Command File: 'l2_q1.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'sample-project.lnp', Handle=0x00000960
+### Creating CmdFile 'l2_q1.lnp', Handle=0x00000AB0
 ### Writing '.lnp' file
-### ADS-LD Command file 'sample-project.lnp' is ready.
+### ADS-LD Command file 'l2_q1.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
 ### ADS-LD: executed with 0 errors
 ### Updating obj list
